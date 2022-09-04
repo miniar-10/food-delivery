@@ -1,0 +1,20 @@
+﻿@using Bon_appetit.Components
+@using Bon_appetit.Views
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    
+
+<div class="text-center pt-3">
+    <h1 class="display-4">Our food</h1>
+</div>
+
+
+
+       
+@(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered));
+<script src="./_framework/blazor.server.js"></script>

@@ -1,0 +1,114 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Food
+@using System.Web.Mvc;
+@using System.Security.Policy
+
+ <div class="card m-3 pl-0 pr-0">  
+            
+               
+             <img src='~/data/images/ProductsImages/@Model.Image ' class="card-img  m-0 p-0 w-100 "alt='@Model.Name' />
+           
+            <div class="card-body">
+                <div class="d-flex">
+                    <h5 class="card-title">@Model.Name</h5>
+                   
+                   <h5 class="ml-auto price">@Model.price dt  &nbsp;</h5>
+
+                </div>
+                <div class="card-footer pl-0 pr-0 ml-0 mr-0">
+                    <form>
+                        
+                <div class="d-flex">
+                    <button id=@Model.Name value="Button" type="button" >See more</button>
+                     <div class="container">
+    <div class="modal fade" tabindex="-1" id="loginModal"
+         data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        ×
+                    </button>
+                    <h4 class="modal-title">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" type="text"
+                                   placeholder="Login Username" id="inputUserName" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Login Password"
+                                   type="password" id="inputPassword" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary button button4">Sign</button>
+                    <button type="button" id="btnHideModal" class="btn btn-primary button button4">
+                        Hide
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+                   
+                   <h5 class="ml-auto btn btn-primary w-25">Buy </h5>
+
+                </div>
+                    </form>
+
+                </div>
+
+                
+                @*<p class="text-secondary lead">@food.Documentaion</p>*@
+            </div>
+            
+            
+        </div>
+       
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+</script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+@*jQuery.noConflict()(function ($) { // this was missing for me
+    $(document).ready(function() { 
+
+      console.log('ready')
+
+    });
+});*@
+j@*Query.noConflict()(function ($) { 
+    $(document).ready(function () { 
+        console.log('ready')
+        }
+    $("#Burger").click(function () {
+
+        $("#loginModal").modal('show');
+        }
+        }
+    );
+    $("#btnHideModal").click(function () {
+        $("#loginModal").modal('hide');
+    });*@
+</script>
+
+        
+       @* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function (){
+                $("#details").modal('show');
+            });
+        </script>*@

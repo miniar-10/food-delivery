@@ -1,0 +1,139 @@
+﻿@using Bon_appetit.Models
+@using Bon_appetit.Services
+
+@using Microsoft.AspNetCore.Components.Web
+@inject AllFoodService ProductService
+
+
+<div class="container">
+<div class="row row-col-md-3 h-50">
+ @foreach(Food food in ProductService.GetDrinks())
+        {  
+            <div class="card m-3 pl-0 pr-0">  
+        <div class="card-img" style="background-image: url('http://127.0.0.1:8000/@food.Image')">
+        </div>
+        <div class="card-body">
+            <div class="d-flex">
+                    <h5 class="card-title">@food.Name</h5>
+                   
+                   <h5 class="ml-auto price">@food.price dt  &nbsp;</h5>
+
+                </div>
+        </div>
+        <div class="card-footer">
+            <div class="d-flex">
+            <small class="text-muted"><button @onclick="(e => SelectProduct(food.FoodId))" 
+              data-toggle="modal" data-target="#productModal" class="btn">More Info</button>
+            </small>
+            <h5 class="ml-auto btn btn-primary w-25">Buy </h5>
+        </div>
+    </div>
+    </div>
+    }
+</div>
+</div>
+
+@if(selectedProduct != null)
+{
+  <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="productTitle">@selectedProduct.Name</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card w-100">
+            <div class="card-img w-100"  style="background-image: url('http://127.0.0.1:8000/@selectedProduct.Image');">
+            </div>
+            <div class="card-body">
+                <p class="card-text lead">@selectedProduct.Description</p>
+                 <div class="d-flex">
+                 <h4 class="fw-bold"> @selectedProduct.price dt </h4>
+                <h5 class="ml-auto btn btn-primary w-25">Buy </h5>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          @if(VoteCount == 0)
+          {
+            <span>Be the first to vote!</span>
+          }
+          else
+          {
+            <span>@VoteCount @voteLabel</span>
+          }
+          @for(int i=1; i<6; i++)
+          {
+            var currentStar = i;
+            if(i<=currentRating)
+            {
+              <span class="fa fa-star checked" @onclick="(e => SubmitRating(currentStar))"></span>
+            }
+            else
+            {
+              <span class="fa fa-star" @onclick="(e => SubmitRating(currentStar))"></span>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@code 
+{
+     IEnumerable<ProductRating> RatingList;
+    int currentRating = 0;
+    Food selectedProduct;
+    int selectedProductId;
+    int VoteCount=0;
+
+    void SelectProduct(int productId)
+    {
+      selectedProductId = productId;
+        selectedProduct = ProductService.GetAll().First(x => x.FoodId == productId);
+        RatingList = ProductService.GetRating(productId);
+        GetCurrentRating();
+    }
+
+    
+    
+    string voteLabel;
+
+    void GetCurrentRating()
+    {
+      if(RatingList.Count()==0)
+      {
+            currentRating = 0;
+            VoteCount = 0;
+       }
+      else
+      {
+
+            VoteCount = RatingList.Count();
+            int sumrating=0;
+            foreach(ProductRating Rate in RatingList)
+            {
+                sumrating += Rate.Rate;
+            }
+        voteLabel = VoteCount > 1 ? "Votes" : "Vote";
+        currentRating =sumrating / VoteCount;
+      }
+
+      System.Console.WriteLine($"Current rating for {selectedProduct.FoodId}: {currentRating}");
+    }
+
+    void SubmitRating(int rating)
+    {
+      System.Console.WriteLine($"Rating received for {selectedProduct.FoodId}: {rating}");
+      ProductService.AddRating(selectedProduct, rating);
+      SelectProduct(selectedProductId);
+        
+    }
+}

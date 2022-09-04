@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bon_appetit</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+   
+     <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="mb-5">
+         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-0 row">
+            <div class="container w-100">
+                <a class="navbar-brand col-2" asp-area="" asp-controller="Home" asp-action="Index">Bon_appetit</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse w-50 m-0 p-0">
+                    <ul class="navbar-nav p-0 m-0 w-100 pr-5 pl-5">
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="/Home" asp-action="Home">Home</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link   " asp-area="" asp-controller="/Home" asp-action="Preferred">Favourite</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link   " asp-area="" asp-controller="/Home" asp-action="Food">Food</a>
+                        </li>
+                         <li class="nav-item  ">
+                            <a class="nav-link " asp-area="" asp-controller="/Home" asp-action="Drinks">Drinks</a>
+                        </li>
+                    
+                                
+                            
+                    </ul>
+                    
+                </div>
+                    <div class="nav-item login ">
+                       
+                        <a class="btn login-btn ml-5" asp-area="" asp-controller="/Home" asp-action="Loginn" role="button">Login</a>
+                        
+                        </div>
+            </div>
+        </nav>
+     <div id="carouselExampleIndicators" class="mb-5 carousel slide w-100 h-100" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="crsl-indicator active"></li>
+        <li data-target="#carouselExampleIndicators"class="crsl-indicator" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" class="crsl-indicator" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators"class="crsl-indicator" data-slide-to="3"></li>
+      </ol>
+  <div class="carousel-inner h-100 w-100">
+    <div class="carousel-item row w-100 h-50 active">
+         <div class="description mt-0 pt-0 col">
+
+      <h2>We have the most delicious pizza all over the world</h2>
+      <button class="btn mt-2">Buy now</button>
+     </div>
+      <img class="d-block ml-auto mt-2 col-6" src="~/data/images/pizzaPng.png" alt="First slide">
+
+    </div>
+    <div class="carousel-item row h-50 w-100 ">
+         <div class="description col mt-0">
+
+      <h2>Fast, appetizing and healthy </h2>
+      <button class="btn mt-2">Buy now</button>  
+      </div>
+      <img class="d-block h-100 ml-auto col-6 " src="~/data/images/burgerPng.png" alt="Second slide">
+
+  </div>
+    <div class="carousel-item row h-100 w-100 ">
+         <div class="description col">
+         
+  <h2>Perfect thin and crispy fries</h2>
+      <button class="btn mt-2">Buy now</button>    
+      </div>
+      <img class="d-block h-100 ml-auto col-6" src="~/data/images/friesPng.jpg" alt="Third slide">
+
+    </div>
+    <div class="carousel-item row h-100 w-100">
+         <div class="description col ">
+       <h2>You can also order your preferred drink</h2>
+      <button class="btn mt-2">Buy now</button>
+         </div>
+
+      <img class="d-block ml-auto h-100 col-6 " src="~/data/images/cocaPng.png" alt="fourth slide">
+ 
+   
+    </div>
+   
+  
+  </div>
+  <a class="carousel-control-prev " href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+       
+    </header>
+
+   @* <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>*@
+
+     <div class="container mt-5">
+        <main role="main" class="p-0 m-0 main w-100">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Bon_appetit - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

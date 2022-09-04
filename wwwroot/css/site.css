@@ -1,0 +1,351 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.navbar {
+    /*position:absolute;*/
+    top: 0;
+    width: 100%;
+    background-color: #f5f7f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0;
+
+}
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  width:20%;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+header{
+    height:400px;
+}
+.btn-primary {
+    background-color: #fe7240;
+    color: #f5f7f5;
+    opacity: 0.8;
+    border: none;
+    border-radius:5px;
+}
+    .btn-primary:hover {
+        opacity: 1;
+        background-color: #fe7240;
+    }
+.main{
+    position:relative;
+    top:90%!important;
+  
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+  transform:scale(1.2);
+}
+.crsl-indicator {
+    color: #fe7240;
+}
+.carousel .carousel-indicators li {
+    background-color: #fe7240;
+}
+ ul{
+   
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+
+}
+
+/* .navbar-collapse{
+     width:20%!important;
+ }*/
+.carousel {
+    height: 320px;
+    background-color: #f5f7f5;
+    padding-bottom: 3%;
+    padding-right: 3%;
+}
+.carousel-control-prev, .carousel-control-next {
+    color: #fe7240!important;
+}
+.carousel-control-prev-icon {
+    margin-right:20px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fe7240' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+.carousel-control-next-icon {
+    margin-left: 20px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fe7240' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 12%;
+    color:#fff!important;
+}
+
+.carousel-inner {
+    
+    height:100% !important;
+    width:100% !important;
+    
+}
+   
+    @media (min-width: 768px) {
+        html {
+    font-size: 100%;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+   color :#272D2F,
+}
+.footer {
+  /*position: absolute;*/
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+
+   /* Vertically center the text there */
+}
+nav{
+    z-index:2;
+}
+.container {
+    height: 100px !important;
+}
+
+.login-btn {
+
+    background-color: #272D2F;
+    color: #f5f7f5;
+    width: 90px !important;
+    font-size: 24px;
+    opacity: 0.9;
+    /*transition: 1ms;*/
+    margin-left: 80px;
+    transition: 0.4s;
+    
+    text-align: center;
+    vertical-align: top;
+}
+    .login-btn:hover {
+        
+        opacity: 1;
+        color:white;
+        background-color: #fe7240;
+        text-align: center;
+        vertical-align: top;
+        margin-left: 40px;
+        /*font-size: 26px;*/
+    }
+
+
+li a {
+    font-weight:bold;
+   
+}
+a.navbar-brand {
+    white-space: normal;
+    font-family: 'Yellowtail', cursive;
+    font-size: xx-large;
+    text-align: center;
+    word-break: break-all;
+    color: #272D2F !important;
+    flex:1
+}
+.login{
+    flex:1;
+    /*padding-left:25%;*/
+    
+}
+
+/* Provide sufficient contrast against white background */
+/*a {
+    color: #0366d6;
+}*/
+a.nav-link {
+    color: rgba(254, 114, 64,0.7) !important;
+    font-size: 24px;
+}
+    nav-link:hover nav-item {
+        font-size:26px;
+    }
+
+   .description{
+
+       position: absolute;
+       width:45%!important;
+       padding-left:10%!important;
+       padding-left:15%!important;
+       top:30%!important;
+       color:#272D2F;
+   }
+
+    .description .btn {
+        background-color: #fe7240;
+        color: #f5f7f5;
+        opacity: 0.8;
+        height: 50px;
+        width: 130px;
+        transition: 0.4s;
+        font-size: 22px;
+        font-weight: bold;
+      
+    }
+    .description .btn:hover {
+        transform: scale(1.1);
+        opacity:1;
+        
+    }
+   .carousel-item{
+       height:320px !important;
+   }
+
+
+p {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    margin-top:40px;
+    font-family: 'Lobster', sans-serif;
+}
+
+ul {
+    font-family: 'Lobster', sans-serif;
+    color: #fe7240 !important;
+    
+}
+
+.d-flex {
+    font-weight: bolder;
+}
+
+.card-img {
+    height: 330px;
+    /*widtd:420px;*/
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    opacity: .8;
+}
+
+.modal .card-img {
+    height: 500px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+}
+
+.card-footer {
+    background: #fbfafd;
+}
+.card:hover .card-img {
+    opacity: 1;
+    -webkit-transform-style: preserve-3d;
+}
+
+.card {
+    width: 30% !important;
+    -moz-transition: 2s; /* Firefox */
+    -webkit-transition: 2s; /* Safari and Chrome */
+    -o-transition: 2s; /* Opera */
+    transition: 0.4s;
+}
+.checked {
+    color: orange;
+}
+input{
+    height:40px!important;
+    margin-top:10px!important;
+}
+.card-body {
+    /*height: 100px;*/
+    font-family: 'Nunito', sans-serif;
+    background: #fbfafd;
+}
+.modal-body .card{
+    width:100%!important;
+    margin:0!important;
+    padding:0!important;
+    transition:none;
+}
+    .modal-body .card:hover{
+        transform:scale(1);
+    }
+    .modal-body .card .card-img {
+        opacity: 1;
+        transition: none;
+
+    }
+.fw-bold {
+    color: #fe7240;
+    font-size:28px;
+}
+.mb1{
+    height:10%!important;
+
+}
+form{
+    height:200px!important;
+}
+tr{
+    height:50px !important;
+}
+.lgn{
+    height:40px;
+}
+.sign-in-up-link {
+  color:  #fe7240!important;
+  font-weight:bold;
+  opacity:.8;
+}
+table{
+    width:50%!important;
+}
+.lbl{
+    padding-left:9%.
+}

@@ -1,0 +1,38 @@
+﻿@using Bon_appetit.Models
+@using Bon_appetit.Views.UserAuthentification
+@model SignUpModel
+<h1 class="text-center"> Sign up</h1>
+
+ <form method="post">
+        <table class=" mx-auto h-100">
+           
+            <tr>
+                
+                <td ><input class="w-100" type="text" placeholder="Username" asp-for="@Model.Username" /></td>
+            </tr>
+            <tr>
+              
+                <td ><input type="password" class="w-100" placeholder="password" asp-for="@Model.Password" /></td>
+            </tr>
+            <tr>
+                
+                <td><input type="email" placeholder="Email" class="w-100" asp-for="@Model.EMail" /></td>
+            </tr>
+             <tr>
+                
+                <td><input type="text" placeholder="Address"class="w-100" asp-for="@Model.Adress" /></td>
+            </tr>
+             <tr>
+                
+                <td><input type="number" placeholder="Phone number"class="w-100" asp-for="@Model.PhoneNumber" /></td>
+            </tr>
+            <tr class="text-center p-0">
+                
+                <td><input type="submit" class="btn-primary lgn text-center w-25 " value="Login" /></td>
+            </tr>
+             <tr>
+                
+                <td class="text-center" colspan="2"> You already have an account? <a href="#" class="sign-in-up-link"onclick="@("window.location.href='" + @Url.Action("Loginn", "Home") + "'");">Login</a></td>
+            </tr>
+        </table>
+    </form>

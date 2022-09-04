@@ -1,0 +1,17 @@
+﻿
+
+@using Bon_appetit.Components
+@using Bon_appetit.Views
+
+@{ViewBag.title="Home";}
+
+@model IEnumerable<Food> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    
+
+<div class="text-center pt-3">
+    <h1 class="display-4">Our drinks</h1>
+</div>
+
+@(await Html.RenderComponentAsync<DrinkList>(RenderMode.ServerPrerendered));
+<script src="./_framework/blazor.server.js"></script>
